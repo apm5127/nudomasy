@@ -1,0 +1,8 @@
+/**
+ * User
+ */
+class User {
+	constructor() {
+		
+	}
+}
