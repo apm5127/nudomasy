@@ -1,0 +1,21 @@
+{
+  "name": "nudomasy",
+  "description": "Document Management System",
+  "main": "",
+  "authors": [
+    "apm5127 <apm5127@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/apm5127/nudomasy",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
