@@ -11,23 +11,24 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { UploadComponent } from './components/upload/upload.component';
 import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.component';
 import { DynamicFormQuestionComponent } from './components/dynamic-form/dynamic-form-question/dynamic-form-question.component';
+import { QuestionService } from './services/question/question.service';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    DocumentListComponent,
-    DashboardComponent,
-    UploadComponent,
-    DynamicFormComponent,
-    DynamicFormQuestionComponent
-  ],
-  imports: [
-    BrowserModule,
-    ReactiveFormsModule,
-    HttpModule,
-	AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		DocumentListComponent,
+		DashboardComponent,
+		UploadComponent,
+		DynamicFormComponent,
+		DynamicFormQuestionComponent
+	],
+	imports: [
+		BrowserModule,
+		ReactiveFormsModule,
+		HttpModule,
+		AppRoutingModule
+	],
+	providers: [QuestionService],
+	bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -22,7 +22,7 @@ export class DynamicFormComponent implements OnInit {
 	ngOnInit() {
 		this.form = this.qcs.toFormGroup(this.questions);
 	}
-	onsubmit() {
+	onSubmit() {
 		this.payload = JSON.stringify(this.form.value);
 	}
 
