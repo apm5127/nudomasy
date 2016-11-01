@@ -1,7 +1,7 @@
 /**
  * DocumentBase
  */
-export class DocumentBase<T> {
+export class DocumentBase {
 	docNum: number;
 	docType: string;
 	rev: number;
@@ -19,6 +19,7 @@ export class DocumentBase<T> {
 	reviewer: User;
 	qaReviewer: User;
 	authorizer: User;
+	isCanceled: boolean;
 
 	constructor(options: {
 		docNum?: number,
@@ -33,7 +34,12 @@ export class DocumentBase<T> {
 		requestingFunction?: string,
 		storageLocation?: string,
 		qaRecord?: boolean,
-		references?: string
+		references?: string,
+		preparer?: User,
+		reviewer?: User,
+		qaReviewer?: User,
+		authorizer?: User,
+		isCanceled?: boolean
 	} = {}) {
 		this.docNum = options.docNum;
 		this.docType = options.docType;
@@ -49,5 +55,10 @@ export class DocumentBase<T> {
 		this.requestingFunction = options.requestingFunction;
 		this.qaRecord = options.qaRecord;
 		this.references = options.references;
+		this.preparer = options.preparer;
+		this.reviewer = options.reviewer;
+		this.qaReviewer = options.qaReviewer;
+		this.authorizer = options.authorizer;
+		this.isCanceled = options.isCanceled;
 	}
 }
