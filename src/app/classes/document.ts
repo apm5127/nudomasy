@@ -15,20 +15,39 @@ export class DocumentBase<T> {
 	storageLocation: string;
 	qaRecord: boolean;
 	references: string;
+	preparer: User;
+	reviewer: User;
+	qaReviewer: User;
+	authorizer: User;
 
 	constructor(options: {
-		value?: T,
-		key?: string,
-		label?: string,
-		required?: boolean,
-		order?: number,
-		controlType?: string
+		docNum?: number,
+		docType?: string,
+		rev?: number,
+		title?: string,
+		dateReserved?: Date,
+		dateUploaded?: Date,
+		reservedBy?: User,
+		recordedBy?: User,
+		projectReference?: number,
+		requestingFunction?: string,
+		storageLocation?: string,
+		qaRecord?: boolean,
+		references?: string
 	} = {}) {
-		this.value = options.value;
-		this.key = options.key;
-		this.label = options.label;
-		this.required = options.required;
-		this.order = options.order === undefined ? 1 : options.order;
-		this.controlType = options.controlType || '';
+		this.docNum = options.docNum;
+		this.docType = options.docType;
+		this.rev = options.rev;
+		this.title = options.title;
+		this.dateReserved = options.dateReserved;
+		this.dateUploaded = options.dateUploaded;
+		this.reservedBy = options.reservedBy;
+		this.recordedBy = options.recordedBy;
+		this.projectReference = options.projectReference;
+		this.requestingFunction = options.requestingFunction;
+		this.storageLocation = options.storageLocation;
+		this.requestingFunction = options.requestingFunction;
+		this.qaRecord = options.qaRecord;
+		this.references = options.references;
 	}
 }
