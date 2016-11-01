@@ -1,6 +1,8 @@
 /**
  * DocumentBase
  */
+import { User } from './user';
+
 export class DocumentBase {
 	docNum: number;
 	docType: string;

@@ -4,14 +4,16 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
-import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
 import { DocumentListComponent } from './components/document-list/document-list.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { UploadComponent } from './components/upload/upload.component';
 import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.component';
 import { DynamicFormQuestionComponent } from './components/dynamic-form/dynamic-form-question/dynamic-form-question.component';
+import { DocumentRowComponent } from './components/document-list/document-row/document-row.component';
 import { QuestionService } from './services/question/question.service';
+import { DocumentInfoService } from './services/document-info/document-info.service';
 
 @NgModule({
 	declarations: [
@@ -20,7 +22,8 @@ import { QuestionService } from './services/question/question.service';
 		DashboardComponent,
 		UploadComponent,
 		DynamicFormComponent,
-		DynamicFormQuestionComponent
+		DynamicFormQuestionComponent,
+		DocumentRowComponent
 	],
 	imports: [
 		BrowserModule,
@@ -28,7 +31,7 @@ import { QuestionService } from './services/question/question.service';
 		HttpModule,
 		AppRoutingModule
 	],
-	providers: [QuestionService],
+	providers: [QuestionService, DocumentInfoService],
 	bootstrap: [AppComponent]
 })
 export class AppModule { }

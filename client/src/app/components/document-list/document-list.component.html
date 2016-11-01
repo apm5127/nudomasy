@@ -10,7 +10,7 @@
 	</thead>
 	<tbody>
 		<tr *ngFor="let doc of docs">
-			<td></td>
+			<app-document-row [doc]="doc"></app-document-row>
 		</tr>
 	</tbody>
 </table>
