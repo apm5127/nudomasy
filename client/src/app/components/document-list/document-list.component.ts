@@ -10,15 +10,17 @@ import { DocumentInfoService } from '../../services/document-info/document-info.
 	styleUrls: ['./document-list.component.css']
 })
 export class DocumentListComponent implements OnInit {
-	//documents: DocumentBase[];
-	docs = [5, 10, 15, 20];
+	docs: DocumentBase[];
+	simpleDateReserved: string[];
+	simpleDateUploaded: string[];
 
 	constructor(private dis: DocumentInfoService) { }
 
 	// TODO: Implement filters for searching and faster load times
-
 	ngOnInit() {
-		//this.documents = this.dis.getDocuments(this.documents);
+		this.docs = this.dis.getDocuments();
+		this.simpleDateReserved =  this.docs.map(d => d.dateReserved.toLocaleDateString());
+		this.simpleDateUploaded =  this.docs.map(d => d.dateReserved.toLocaleDateString());
 	}
 
 }

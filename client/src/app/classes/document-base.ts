@@ -4,8 +4,10 @@
 import { User } from './user';
 
 export class DocumentBase {
+	id: number;
 	docNum: number;
 	docType: string;
+	completeName: string;
 	rev: number;
 	title: string;
 	dateReserved: Date;
@@ -22,10 +24,13 @@ export class DocumentBase {
 	qaReviewer: User;
 	authorizer: User;
 	isCanceled: boolean;
+	filePath: string;
 
-	constructor(options: {
+	constructor(info: {
+		id?: number,
 		docNum?: number,
 		docType?: string,
+		completeName?: string,
 		rev?: number,
 		title?: string,
 		dateReserved?: Date,
@@ -41,26 +46,30 @@ export class DocumentBase {
 		reviewer?: User,
 		qaReviewer?: User,
 		authorizer?: User,
-		isCanceled?: boolean
+		isCanceled?: boolean,
+		filePath?: string
 	} = {}) {
-		this.docNum = options.docNum;
-		this.docType = options.docType;
-		this.rev = options.rev;
-		this.title = options.title;
-		this.dateReserved = options.dateReserved;
-		this.dateUploaded = options.dateUploaded;
-		this.reservedBy = options.reservedBy;
-		this.recordedBy = options.recordedBy;
-		this.projectReference = options.projectReference;
-		this.requestingFunction = options.requestingFunction;
-		this.storageLocation = options.storageLocation;
-		this.requestingFunction = options.requestingFunction;
-		this.qaRecord = options.qaRecord;
-		this.references = options.references;
-		this.preparer = options.preparer;
-		this.reviewer = options.reviewer;
-		this.qaReviewer = options.qaReviewer;
-		this.authorizer = options.authorizer;
-		this.isCanceled = options.isCanceled;
+		this.id = info.id;
+		this.docNum = info.docNum;
+		this.docType = info.docType;
+		this.completeName = info.completeName;
+		this.rev = info.rev;
+		this.title = info.title;
+		this.dateReserved = info.dateReserved;
+		this.dateUploaded = info.dateUploaded;
+		this.reservedBy = info.reservedBy;
+		this.recordedBy = info.recordedBy;
+		this.projectReference = info.projectReference;
+		this.requestingFunction = info.requestingFunction;
+		this.storageLocation = info.storageLocation;
+		this.requestingFunction = info.requestingFunction;
+		this.qaRecord = info.qaRecord;
+		this.references = info.references;
+		this.preparer = info.preparer;
+		this.reviewer = info.reviewer;
+		this.qaReviewer = info.qaReviewer;
+		this.authorizer = info.authorizer;
+		this.isCanceled = info.isCanceled;
+		this.filePath = info.filePath;
 	}
 }

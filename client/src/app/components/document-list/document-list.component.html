@@ -5,12 +5,23 @@
 <table class="table table-responsive table-striped table-hover">
 	<thead>
 		<tr>
-			<th>Document List</th>
+			<th>Document Number</th>
+			<th>Revision</th>
+			<th>Date Accepted</th>
+			<th>Project Number</th>
+			<th>QA Record</th>
+			<th>Preparer</th>
 		</tr>
 	</thead>
 	<tbody>
 		<tr *ngFor="let doc of docs">
-			<app-document-row [doc]="doc"></app-document-row>
+			<td>{{doc.completeName}}</td>
+			<td>{{doc.rev}}</td>
+			<td>{{simpleDateUploaded}}</td>
+			<td>UFN-{{doc.projectReference}}</td>
+			<td *ngIf="doc.QARecord">Yes</td>
+			<td *ngIf="!doc.QARecord">No</td>
+			<td>{{doc.preparer.lastName}}, {{doc.preparer.firstName}}</td>
 		</tr>
 	</tbody>
 </table>

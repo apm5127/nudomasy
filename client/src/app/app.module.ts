@@ -11,7 +11,6 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { UploadComponent } from './components/upload/upload.component';
 import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.component';
 import { DynamicFormQuestionComponent } from './components/dynamic-form/dynamic-form-question/dynamic-form-question.component';
-import { DocumentRowComponent } from './components/document-list/document-row/document-row.component';
 import { QuestionService } from './services/question/question.service';
 import { DocumentInfoService } from './services/document-info/document-info.service';
 
@@ -22,8 +21,7 @@ import { DocumentInfoService } from './services/document-info/document-info.serv
 		DashboardComponent,
 		UploadComponent,
 		DynamicFormComponent,
-		DynamicFormQuestionComponent,
-		DocumentRowComponent
+		DynamicFormQuestionComponent
 	],
 	imports: [
 		BrowserModule,
