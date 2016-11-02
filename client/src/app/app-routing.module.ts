@@ -9,6 +9,7 @@ const routes: Routes = [
 	{ path: '', component: DashboardComponent },
 	{ path: 'docs', component: DocumentListComponent },
 	{ path: 'upload', component: UploadComponent }
+	// TODO: Add Settings page
 ];
 
 @NgModule({

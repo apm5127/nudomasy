@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 
-import { QuestionBase } from '../question-control/question-base';
-import { DropdownQuestion } from '../question-control/question-dropdown';
-import { TextboxQuestion } from '../question-control/question-textbox';
+import { QuestionBase } from '../../classes/question-base';
+import { DropdownQuestion } from '../../classes/question-dropdown';
+import { TextboxQuestion } from '../../classes/question-textbox';
 
 @Injectable()
 export class QuestionService {
@@ -15,12 +15,12 @@ export class QuestionService {
 				key: 'docType',
 				label: 'Document Type',
 				options: [
-					{ key: 'ap', value: 'Audit Package' },
-					{ key: 'cs', value: 'Customer Specification' },
-					{ key: 'lt', value: 'Letter' },
-					{ key: 'ma', value: 'Management Authority Delegation' },
-					{ key: 'pp', value: 'Proposal Package' },
-					{ key: 'rp', value: 'Report' }
+					{ key: 'AP', value: 'Audit Package' },
+					{ key: 'CS', value: 'Customer Specification' },
+					{ key: 'LT', value: 'Letter' },
+					{ key: 'MA', value: 'Management Authority Delegation' },
+					{ key: 'PP', value: 'Proposal Package' },
+					{ key: 'RP', value: 'Report' }
 				],
 				order: 3
 			}),
