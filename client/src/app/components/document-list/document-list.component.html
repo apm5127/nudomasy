@@ -14,10 +14,10 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr *ngFor="let doc of docs">
+		<tr *ngFor="let doc of docs; let i = index">
 			<td>{{doc.completeName}}</td>
 			<td>{{doc.rev}}</td>
-			<td>{{simpleDateUploaded}}</td>
+			<td>{{simpleDateUploaded[i]}}</td>
 			<td>UFN-{{doc.projectReference}}</td>
 			<td *ngIf="doc.QARecord">Yes</td>
 			<td *ngIf="!doc.QARecord">No</td>
@@ -25,3 +25,7 @@
 		</tr>
 	</tbody>
 </table>
+
+<div *ngIf="payload" class="form-row">
+	<strong>Contain the following values</strong><br>{{payload}}
+</div>

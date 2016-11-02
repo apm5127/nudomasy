@@ -14,6 +14,8 @@ export class DocumentListComponent implements OnInit {
 	simpleDateReserved: string[];
 	simpleDateUploaded: string[];
 
+	payload: string = '';
+
 	constructor(private dis: DocumentInfoService) { }
 
 	// TODO: Implement filters for searching and faster load times
@@ -21,6 +23,8 @@ export class DocumentListComponent implements OnInit {
 		this.docs = this.dis.getDocuments();
 		this.simpleDateReserved =  this.docs.map(d => d.dateReserved.toLocaleDateString());
 		this.simpleDateUploaded =  this.docs.map(d => d.dateReserved.toLocaleDateString());
+		
+		this.payload = JSON.stringify(Object.keys(this.docs));
 	}
 
 }
