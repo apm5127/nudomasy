@@ -3,7 +3,7 @@ var path = require('path');
 var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
-var tasks = require('./routes/tasks');
+var api = require('./routes/api');
 
 var port = 4300;
 
@@ -25,7 +25,7 @@ app.use(bodyParser.urlencoded({
 
 // Route
 app.use(`/`, index);
-app.use(`/api`, tasks);
+app.use(`/api`, api);
 
 // Listen
 app.listen(port, function () {

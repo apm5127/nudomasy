@@ -3,6 +3,11 @@ var router = express.Router();
 var mongojs = require(`mongojs`);
 var db = mongojs(`mongodb://apm5127:warcraft3@ds049925.mlab.com:49925/apm5127_mean-stack-my-task-list`, [`tasks`]);
 
+// TODO: Modify api to handle document requests
+// TODO: Modify api to handle user requests
+// TODO: Modify api to handle question requests
+// TODO: Modify api to handle reservation requests
+
 // Get all tasks
 router.get(`/tasks`, function (req, res, next) {
 	db.tasks.find(function (err, tasks) {
